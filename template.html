@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="vendor/bootstrap_5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/feather-icons-web/feather.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+
+<section class="container-fluid">
+    <div class="row">
+
+<!--        sidebar-->
+
+        <div class="col-12 col-lg-3 col-xl-2 ">
+            <div class="sidebar vh-100">
+                <div class="d-flex align-items-center justify-content-between pd">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <span class="text-primary"><i class="feather-shopping-bag fs-3 me-2"></i></span>
+                        <span class="fw-bold fs-5 text-primary">My Shop</span>
+                    </div>
+                    <button class="d-block d-lg-none p-2 btn btn-light" id="hideSidebarBtn">
+                        <i class="feather-x text-primary" style="font-size: 35px"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+<!--        content-->
+
+        <div class="col-12 col-lg-9 col-xl-10 content bg-light overflow-scroll vh-100">
+
+<!--            header-->
+            <div class="row  header ">
+                <div class="col-12">
+                    <div class=" pd">
+                        <div class="shadow-sm py-1 px-2 bg-primary rounded d-flex align-items-center justify-content-between">
+                            <button class="d-block d-lg-none btn btn-primary" id="showSidebarBtn">
+                                <i class="feather-menu text-light" style="font-size: 35px"></i>
+                            </button>
+
+                            <div class="d-none d-md-block">
+                                <form action="" class="row p-0">
+                                    <div class="col-10 pe-0">
+                                        <input type="text" class="form-control" id="search" placeholder="Search everything">
+                                    </div>
+                                    <div class="col-1">
+                                        <button class="btn btn-light font-weight-bold">
+                                            <i class="feather-search text-primary"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="">
+                                <div class="dropdown">
+                                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="img/user/avatar5.jpg" class="rounded-circle me-1" style="width: 30px" alt="">
+                                        RiO
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Log out</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--            icon section -->
+            <div class="row iconSection">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                    <div class="card border-0 shadow-sm mb-3 status-card mt-1" onclick="goUrl()">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="d-flex align-items-center justify-content-center w-100 h-100">
+                                        <i class="feather-shopping-bag fs-1 text-primary"></i>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="">
+                                        <span class="fw-bold h1 mb-2 text-warning counter">56</span>
+                                        <p class="text-black-50 mb-0">Today order</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                    <div class="card border-0 shadow-sm mb-3 status-card mt-1" onclick="goUrl()">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="d-flex align-items-center justify-content-center w-100 h-100">
+                                        <i class="feather-users fs-1 text-primary"></i>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="">
+                                        <span class="fw-bold h1 mb-2 text-warning counter">103</span>
+                                        <p class="text-black-50 mb-0">Total users</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                    <div class="card border-0 shadow-sm mb-3 status-card mt-1" onclick="goUrl()">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="d-flex align-items-center justify-content-center w-100 h-100">
+                                        <i class="feather-box fs-1 text-primary"></i>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="">
+                                        <span class="fw-bold h1 mb-2 text-warning counter">1290</span>
+                                        <p class="text-black-50 mb-0">Total items</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                    <div class="card border-0 shadow-sm mb-3 status-card mt-1" onclick="goUrl()">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="d-flex align-items-center justify-content-center w-100 h-100">
+                                        <i class="feather-map-pin fs-1 text-primary"></i>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="">
+                                        <span class="fw-bold h1 mb-2 text-warning counter">14</span>
+                                        <p class="text-black-50 mb-0">Get location</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--            chart -->
+            <div class="row">
+                <div class="col-12 col-xl-7">
+                    <div class="mb-3">
+                        <div class="card border-0 shadow-sm overflow-hidden">
+                            <div class="d-flex align-items-center justify-content-between p-3">
+                                <h5 class="mb-0">Order & viewer</h5>
+                                <div class="d-flex">
+                                    <img src="img/user/avatar1.jpg" alt="" class="shadow-sm rounded-circle" style="margin-left: -15px; width: 40px; height: 40px">
+                                    <img src="img/user/avatar2.jpg" alt="" class="shadow-sm rounded-circle" style="margin-left: -15px; width: 40px; height: 40px">
+                                    <img src="img/user/avatar3.jpg" alt="" class="shadow-sm rounded-circle" style="margin-left: -15px; width: 40px; height: 40px">
+                                    <img src="img/user/avatar4.jpg" alt="" class="shadow-sm rounded-circle" style="margin-left: -15px; width: 40px; height: 40px">
+                                    <img src="img/user/avatar5.jpg" alt="" class="shadow-sm rounded-circle" style="margin-left: -15px; width: 40px; height: 40px">
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="ov" height="150"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-12 col-xl-5">
+                    <div class="">
+                        <div class="card border-0 shadow-sm mb-3">
+                            <div class="d-flex align-items-center justify-content-between p-3">
+                                <h5 class="mb-0">Support Location</h5>
+                                <div class="d-flex">
+                                    <i class="feather-pie-chart fs-3 text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="sv" height="220"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--            item & table-->
+            <div class="row align-items-end">
+                <div class="col-12 col-xl-5">
+                    <div class="mb-3">
+                        <div class="card border-0 shadow-sm caro-card">
+                            <div class="card-body item-carousel" style="height: 150px;">
+                                <div class="">
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="margin-top: -150px">
+                                        <div class="carousel-indicators" style="bottom: -30px">
+                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active bg-warning" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="bg-warning" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="bg-warning" aria-label="Slide 3"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div class="row align-items-end">
+                                                    <div class="col-6">
+                                                        <div class="mb-4">
+                                                            <h5 class="mb-0">Coffee Cup</h5>
+                                                            <h5 class="text-warning my-2">$ 50</h5>
+                                                            <div class="progress">
+                                                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="caro-img" >
+                                                            <img src="img/item/item1.png" class="img-fluid" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="row align-items-end">
+                                                    <div class="col-6">
+                                                        <div class="mb-4">
+                                                            <h5 class="mb-0">Coffee Cup</h5>
+                                                            <h5 class="text-warning my-2">$ 50</h5>
+                                                            <div class="progress">
+                                                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="caro-img" >
+                                                            <img src="img/item/item1.png" class="img-fluid" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="row align-items-end">
+                                                    <div class="col-6">
+                                                        <div class="mb-4">
+                                                            <h5 class="mb-0">Coffee Cup</h5>
+                                                            <h5 class="text-warning my-2">$ 50</h5>
+                                                            <div class="progress">
+                                                                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="caro-img" >
+                                                            <img src="img/item/item1.png" class="img-fluid" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-7">
+                    <div class="mb-3">
+                        <div class="card border-0 shadow-sm table-responsive">
+                            <div class="">
+                                <div class="d-flex align-items-center justify-content-between p-3">
+                                    <h5 class="mb-0">Paid List</h5>
+                                    <div class="d-flex">
+                                        <i class="feather-more-vertical fs-3 text-primary"></i>
+                                    </div>
+                                </div>
+                               <div class="">
+                                   <table class="table mb-0">
+                                       <thead>
+                                       <tr>
+                                           <th>No</th>
+                                           <th>Name</th>
+                                           <th>Assigned Professor</th>
+                                           <th>Fees</th>
+                                           <th>Branch</th>
+                                           <th>Edit</th>
+                                       </tr>
+                                       </thead>
+                                       <tbody>
+                                       <tr>
+                                           <td>1</td>
+                                           <td>Jens Brincker</td>
+                                           <td>Kenny Josh</td>
+                                           <td>
+                                               <span class="btn-sm btn-info text-white">paid</span>
+                                           </td>
+                                           <td>Mechanical</td>
+                                           <td>
+                                               <span><i class="feather-edit text-warning"></i></span>
+                                           </td>
+                                       </tr>
+                                       <tr>
+                                           <td>2</td>
+                                           <td>Mark Hay</td>
+                                           <td> Mark</td>
+                                           <td>
+                                               <span class="btn-sm text-white btn-danger">unpaid </span>
+                                           </td>
+                                           <td>Science</td>
+                                           <td>
+                                               <span><i class="feather-edit text-warning"></i></span>
+                                           </td>
+                                       </tr>
+                                       <tr>
+                                           <td>3</td>
+                                           <td>Anthony Davie</td>
+                                           <td>Cinnabar</td>
+                                           <td>
+                                               <span class="btn-sm btn-info text-white">paid</span>
+                                           </td>
+                                           <td>Commerce</td>
+                                           <td>
+                                               <span><i class="feather-edit text-warning"></i></span>
+                                           </td>
+                                       </tr>
+                                       <tr>
+                                           <td>4</td>
+                                           <td>David Perry</td>
+                                           <td>Felix </td>
+                                           <td>
+                                               <span class="btn-sm text-white btn-danger">unpaid</span>
+                                           </td>
+                                           <td>Mechanical</td>
+                                           <td>
+                                               <span><i class="feather-edit text-warning"></i></span>
+                                           </td>
+                                       </tr>
+                                       <tr>
+                                           <td>5</td>
+                                           <td>Anthony Davie</td>
+                                           <td>Beryl</td>
+                                           <td>
+                                               <span class="btn-sm btn-info text-white">paid</span>
+                                           </td>
+                                           <td>M.B.A.</td>
+                                           <td>
+                                               <span><i class="feather-edit text-warning"></i></span>
+                                           </td>
+                                       </tr>
+                                       <tr>
+                                           <td>6</td>
+                                           <td>Alan Gilchrist</td>
+                                           <td>Joshep</td>
+                                           <td>
+                                               <span class="btn-sm text-white btn-danger ">unpaid</span>
+                                           </td>
+                                           <td>Science</td>
+                                           <td>
+                                               <span><i class="feather-edit text-warning"></i></span>
+                                           </td>
+                                       </tr>
+                                       </tbody>
+                                   </table>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+</section>
+
+<script src="vendor/jquery-3.3.1.min.js"></script>
+<script src="vendor/popper.js"></script>
+<script src="vendor/bootstrap_5/js/bootstrap.bundle.js"></script>
+<script src="vendor/way_point/jquery.waypoints.js"></script>
+<script src="vendor/counter_up/counter_up.js"></script>
+<script src="vendor/chart_js/chart.min.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
